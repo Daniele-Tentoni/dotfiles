@@ -3,7 +3,10 @@
 My dotfiles.
 
 I've started following those articles:
+
 1. https://about.gitlab.com/blog/2020/04/17/dotfiles-document-and-automate-your-macbook-setup/
+
+I'm using [DotBot](https://github.com/anishathalye/dotbot) as dotfiles bootstrapper.
 
 ## Keep in mind
 
