@@ -3,6 +3,7 @@
 #####
 
 # Variables needed by Fastlane https://docs.fastlane.tools/getting-started/ios/setup/#set-up-environment-variables
+# Other info: https://docs.fastlane.tools/best-practices/continuous-integration/#environment-variables-to-set
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -17,6 +18,15 @@ export LANG=en_US.UTF-8
 # deleted.
 
 alias git_prune="git fetch --prune && git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xargs git branch -d"
+
+# Alias: ll
+#
+# List all files in the current directory. Use the following options for ls:
+#   - a: Include directory entries whose names begin with a dot (.).
+#   - l: List in long format.
+#   - F: Display addictional chars for each file type.
+
+alias ll="ls -alF"
 
 ###########
 # SETTINGS
