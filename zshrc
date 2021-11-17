@@ -30,6 +30,12 @@ alias git_prune="git fetch --prune && git branch -vv | grep 'origin/.*: gone]' |
 
 alias ll="ls -alF"
 
+# Alias: runmongoc
+#
+# Run a mongodb container instance with an open 27017 port.
+
+alias runmongoc='sudo docker run -p 27017:27017 -d --name mongoc mongo'
+
 ###########
 # SETTINGS
 ###########
