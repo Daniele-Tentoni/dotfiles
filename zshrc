@@ -25,6 +25,8 @@ alias git_prune="git fetch --prune && git branch -vv | grep 'origin/.*: gone]' |
 #   - a: Include directory entries whose names begin with a dot (.).
 #   - l: List in long format.
 #   - F: Display addictional chars for each file type.
+#
+# From Pop OS! .bashrc
 
 alias ll="ls -alF"
 
