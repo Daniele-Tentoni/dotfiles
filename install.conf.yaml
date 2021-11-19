@@ -10,5 +10,8 @@
     ~/.zshrc:
       force: true
 
+- snap:
+    - code
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
