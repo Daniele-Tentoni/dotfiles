@@ -42,3 +42,7 @@ General purpose IDE.
 1. Check the right identation for the .config.yaml file.
 
 2. Use `source ~/.zshrc` after modifing the zshrc profile to load the changes in the current shell session.
+
+## Inspiration
+
+Took inspiration from [anishathalye's dotfiles](https://github.com/anishathalye/dotfiles).

@@ -1,0 +1,31 @@
+# Alias: git_prune 
+#
+# Delete all remote tracking Git branches where the upstream branch has been
+# deleted.
+
+alias git_prune="git fetch --prune && git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xargs git branch -d"
+
+# Alias: ll
+#
+# List all files in the current directory. Use the following options for ls:
+#   - a: Include directory entries whose names begin with a dot (.).
+#   - l: List in long format.
+#   - F: Display addictional chars for each file type.
+#
+# From Pop OS! .bashrc
+
+alias ll="ls -alF"
+
+# Alias: runmongoc
+#
+# Run a mongodb container instance with an open 27017 port.
+# TODO: Make the name parametrized.
+
+alias runmongoc='sudo docker run -p 27017:27017 -d --name mongoc mongo'
+
+# Alias: runredisc
+#
+# Run a redis container instance with an open 6379 port with name `redisc`.
+# TODO: Make the name parametrized.
+
+alias runredisc='sudo docker run -p 6379:6379 -d --name redisc redis'

@@ -10,31 +10,15 @@ export LANG=en_US.UTF-8
 
 ##########
 # ALIASES
+
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 ##########
 
-# Alias: git_prune 
-#
-# Delete all remote tracking Git branches where the upstream branch has been
-# deleted.
-
-alias git_prune="git fetch --prune && git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xargs git branch -d"
-
-# Alias: ll
-#
-# List all files in the current directory. Use the following options for ls:
-#   - a: Include directory entries whose names begin with a dot (.).
-#   - l: List in long format.
-#   - F: Display addictional chars for each file type.
-#
-# From Pop OS! .bashrc
-
-alias ll="ls -alF"
-
-# Alias: runmongoc
-#
-# Run a mongodb container instance with an open 27017 port.
-
-alias runmongoc='sudo docker run -p 27017:27017 -d --name mongoc mongo'
+if [ -f ~/.zshrc_aliases ]; then
+    . ~/.zshrc_aliases
+fi
 
 ###########
 # SETTINGS

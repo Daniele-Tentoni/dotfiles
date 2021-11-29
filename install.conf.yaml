@@ -7,11 +7,15 @@
 
 - link:
     ~/.gitconfig:
+    ~/.npmrc:
     ~/.zshrc:
       force: true
+    ~/.zshrc_aliases:
 
 - snap:
     - code
+    - dbeaver-ce
+    - node
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
