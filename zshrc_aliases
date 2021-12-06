@@ -5,6 +5,17 @@
 
 alias git_prune="git fetch --prune && git branch -vv | grep 'origin/.*: gone]' | awk '{print \$1}' | xargs git branch -d"
 
+# Alias: git_undo
+#
+# Reset the git head to the previous commit. I'm lazy.
+
+alias git_undo="git reset --soft HEAD^"
+
+# Alias: gitu
+#
+# Shorthand for git_undo command. I'm really lazy.
+alias gitu="git_undo"
+
 # Alias: ll
 #
 # List all files in the current directory. Use the following options for ls:
