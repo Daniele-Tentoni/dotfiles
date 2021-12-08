@@ -33,15 +33,23 @@ In `.zshrc` file I've saved all my configuration for a zsh shell, specially for 
 
 Using the [snap plugin](https://github.com/DrDynamic/dotbot-snap), dotbot will install defined snap packages.
 
-**VScode**
+**VScode** (the _code_ package)
 
 General purpose IDE.
 
+**DBeaver** (the _dbeaver-ce_ package)
+
+General purpouse database manager.
+
+**Node** (the _node_ package)
+
+Javascript platform.
+
 ## Keep in mind
 
-1. Check the right identation for the .config.yaml file.
+1. Check the right identation for the install.config.yaml file.
 
-2. Use `source ~/.zshrc` after modifing the zshrc profile to load the changes in the current shell session.
+2. Use `source ~/.zshrc` after modifing the _zshrc_ profile or _zshrc_aliases_ to load the changes in the current shell session.
 
 ## Inspiration
 
