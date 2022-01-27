@@ -5,11 +5,12 @@
 
 - clean: ["~"]
 
+- create: [~/.zfunc]
+
 - link:
     ~/.gitconfig:
     ~/.npmrc:
     ~/.zshrc:
-      force: true
     ~/.zshrc_aliases:
 
 - snap:
@@ -19,3 +20,4 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [poetry completions zsh > ~/.zfunc/_poetry, Tab completition for Poetry]
