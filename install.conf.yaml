@@ -13,11 +13,14 @@
     ~/.zshrc:
     ~/.zshrc_aliases:
 
-- snap:
-    - code
-    - dbeaver-ce
-    - node
-
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [poetry completions zsh > ~/.zfunc/_poetry, Tab completition for Poetry]
+
+- apt:
+    - code
+    - snapd
+
+- snap:
+    - dbeaver-ce
+    - node
