@@ -13,14 +13,18 @@
     ~/.zshrc:
     ~/.zshrc_aliases:
 
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - [poetry completions zsh > ~/.zfunc/_poetry, Tab completition for Poetry]
-
 - apt:
     - code
+    - curl
+    - make
+    - node
     - snapd
+    - wget
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [curl -sSL https://install.python-poetry.org | python3 -, Install poetry as dependancy manager and packager for Python]
+    - [poetry completions zsh > ~/.zfunc/_poetry, Tab completition for Poetry]
 
 - snap:
     - dbeaver-ce
-    - node
