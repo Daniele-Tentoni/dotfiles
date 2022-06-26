@@ -8,23 +8,49 @@
 - create: [~/.zfunc]
 
 - link:
+    ~/.bash_custom:
     ~/.gitconfig:
     ~/.npmrc:
     ~/.zshrc:
     ~/.zshrc_aliases:
 
 - apt:
+    - build-essential
     - code
     - curl
+    - libbz2-dev
+    - libncursesw5-dev
+    - libffi-dev
+    - liblzma-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - libssl-dev
+    - libxmlsec1-dev
+    - libxml2-dev
+    - llvm
     - make
     - node
+    - pass
+    - python-is-python3
     - snapd
+    - tk-dev
     - wget
+    - xz-utils
+    - zlib1g-dev
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    -
+        command: echo 'if [ -f ~/.bash_custom ]; then . ~/.bash_custom; fi' >> ~/.bashrc
+        stdin: false
+        stdout: false
+        description: Install my customs
+        quiet: true
+    # - [echo 'if [ -f ~/.bash_custom ]; then . ~/.bash_custom; fi' >> .bashrc, Install my customs]
+    - [curl https://pyenv.run | bash, Install pyenv to manage virtual environments]
     - [curl -sSL https://install.python-poetry.org | python3 -, Install poetry as dependancy manager and packager for Python]
     - [poetry completions zsh > ~/.zfunc/_poetry, Tab completition for Poetry]
 
 - snap:
     - dbeaver-ce
+    - telegram-desktop
