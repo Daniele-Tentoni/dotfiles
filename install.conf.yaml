@@ -31,6 +31,7 @@
     - make
     - node
     - pass
+    - pass-git-helper
     - python-is-python3
     - snapd
     - tk-dev

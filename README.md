@@ -39,7 +39,7 @@ Using the [apt plugin](https://github.com/bryant1410/dotbot-apt), dotbot will in
 
 **Pyenv required**: some mandatory packages to build CPython from scratch with Pyenv (to manage environments).
 
-**Pass**: as password manager.
+**Pass** and **[pass-git-helper](https://github.com/languitar/pass-git-helper)**: as password manager and credential-store-helper for git.
 
 ### Shell
 

@@ -3,4 +3,7 @@
     email = daniele.tentoni.1996@gmail.com
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
+[credential]
+    helper = !pass-git-helper $@
