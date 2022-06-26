@@ -21,35 +21,45 @@ I'm using [DotBot](https://github.com/anishathalye/dotbot) as dotfiles bootstrap
 
 In a fresh installation, run `./install`.
 
+Add the following plugin directories to execute snapd and apt installations: `--plugin-dir ./dotbot-snap` and `--plugin-dir ./dotbot-apt`. Remember that you need root privileges if you want to install packages with apt and snapd.
+
 ## What it does
+
+Descriptions of not-obsvious elements.
 
 ### Links
 
-**Zsh profile**
+**Bash Custom**: Custom conf for my bash, used mostly on Linux environments.
 
-In `.zshrc` file I've saved all my configuration for a zsh shell, specially for a MacOs system. Set autocompletition, add some aliases and add some environment variables.
+**Zsh profile**: In `.zshrc` file I've saved all my configuration for a zsh shell, specially for a MacOs system. Set autocompletition, add some aliases and add some environment variables.
+
+### Apt
+
+Using the [apt plugin](https://github.com/bryant1410/dotbot-apt), dotbot will install defined apt packages.
+
+**Pyenv required**: some mandatory packages to build CPython from scratch with Pyenv (to manage environments).
+
+**Pass**: as password manager.
+
+### Shell
+
+Run custom shell scripts, installing my customs, pyenv and poetry.
 
 ### Snap
 
 Using the [snap plugin](https://github.com/DrDynamic/dotbot-snap), dotbot will install defined snap packages.
 
-**VScode** (the _code_ package)
-
-General purpose IDE.
-
 **DBeaver** (the _dbeaver-ce_ package)
 
 General purpouse database manager.
-
-**Node** (the _node_ package)
-
-Javascript platform.
 
 ## Keep in mind
 
 1. Check the right identation for the install.config.yaml file.
 
 2. Use `source ~/.zshrc` after modifing the _zshrc_ profile or _zshrc_aliases_ to load the changes in the current shell session.
+
+My Python dev setup is inspired by [this article](https://mitelman.engineering/blog/python-best-practice/automating-python-best-practices-for-a-new-project/) in 2021, let me know if there's any new best practice to follow!
 
 ## Inspiration
 
