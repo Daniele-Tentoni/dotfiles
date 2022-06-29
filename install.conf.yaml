@@ -55,3 +55,6 @@
 - snap:
     - dbeaver-ce
     - telegram-desktop
+
+- vscode:
+    donjayamanne.python-extension-pack:
