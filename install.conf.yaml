@@ -15,8 +15,8 @@
     ~/.zshrc_aliases:
 
 - apt:
+    - audacity
     - build-essential
-    - code
     - curl
     - libbz2-dev
     - libncursesw5-dev
@@ -29,7 +29,6 @@
     - libxml2-dev
     - llvm
     - make
-    - node
     - pass
     - pass-git-helper
     - python-is-python3
@@ -41,20 +40,30 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    -
-        command: echo 'if [ -f ~/.bash_custom ]; then . ~/.bash_custom; fi' >> ~/.bashrc
-        stdin: false
-        stdout: false
-        description: Install my customs
-        quiet: true
+    - command: echo 'if [ -f ~/.bash_custom ]; then . ~/.bash_custom; fi' >> ~/.bashrc
+      stdin: false
+      stdout: false
+      description: Install my customs
+      quiet: true
     # - [echo 'if [ -f ~/.bash_custom ]; then . ~/.bash_custom; fi' >> .bashrc, Install my customs]
-    - [curl https://pyenv.run | bash, Install pyenv to manage virtual environments]
-    - [curl -sSL https://install.python-poetry.org | python3 -, Install poetry as dependancy manager and packager for Python]
+    - [
+        curl https://pyenv.run | bash,
+        Install pyenv to manage virtual environments,
+      ]
+    - [
+        curl -sSL https://install.python-poetry.org | python3 -,
+        Install poetry as dependancy manager and packager for Python,
+      ]
     - [poetry completions zsh > ~/.zfunc/_poetry, Tab completition for Poetry]
+    - [
+        curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh,
+        Install Rust,
+      ]
 
 - snap:
     - dbeaver-ce
     - telegram-desktop
+    - whatsdesk
 
 - vscode:
-    donjayamanne.python-extension-pack:
+    - rust-lang.rust-analyzer

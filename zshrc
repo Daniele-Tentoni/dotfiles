@@ -35,5 +35,13 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 
 export PATH="$PATH:$HOME/.poetry/bin"
+
 # Has to run before compinit
 fpath+=~/.zfunc
+
+# Use env var for Cargo (Rust)
+if [ -f "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env"; fi
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -9,6 +9,7 @@ My dotfiles.
 - [What it does](#what-it-does)
   - [Links](#links)
   - [Snap](#snap)
+  - [VsCode](#vs-code)
 - [Keep in mind](#keep-in-mind)
 
 I've started following those articles:
@@ -22,6 +23,12 @@ I'm using [DotBot](https://github.com/anishathalye/dotbot) as dotfiles bootstrap
 In a fresh installation, run `./install`.
 
 Add the following plugin directories to execute snapd and apt installations: `--plugin-dir ./dotbot-snap` and `--plugin-dir ./dotbot-apt`. Remember that you need root privileges if you want to install packages with apt and snapd.
+
+This is the definitive command I use:
+
+```
+$ sudo ./install --plugin-dir ./dotbot-apt/ --plugin-dir ./dotbot-snap/ --plugin-dir ./dotbot-vscode
+```
 
 ## What it does
 
@@ -37,9 +44,13 @@ Descriptions of not-obsvious elements.
 
 Using the [apt plugin](https://github.com/bryant1410/dotbot-apt), dotbot will install defined apt packages.
 
+**Audacity** for audio editing.
+
 **Pyenv required**: some mandatory packages to build CPython from scratch with Pyenv (to manage environments).
 
 **Pass** and **[pass-git-helper](https://github.com/languitar/pass-git-helper)**: as password manager and credential-store-helper for git.
+
+**snapd** to install snap packages (see below)
 
 ### Shell
 
@@ -51,7 +62,17 @@ Using the [snap plugin](https://github.com/DrDynamic/dotbot-snap), dotbot will i
 
 **DBeaver** (the _dbeaver-ce_ package)
 
+**telegram-desktop** to use Telegram on desktop.
+
+**whatsdesk** to use Whatsapp on desktop.
+
 General purpouse database manager.
+
+### VS Code
+
+Using the [vscode plugin](https://github.com/hujianxin/dotbot-vscode), dotbot will install defined vscode extensions.
+
+**rust-lang.rust-analyzer** help me write Rust programs.
 
 ## Keep in mind
 
