@@ -8,3 +8,6 @@
 
 [credential]
     helper = !pass-git-helper $@
+    
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs

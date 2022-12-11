@@ -5,7 +5,7 @@
 
 - clean: ["~"]
 
-- create: [~/.zfunc]
+# - create: [~/.zfunc]
 
 - link:
     ~/.bash_custom:
@@ -37,15 +37,21 @@
     - wget
     - xz-utils
     - zlib1g-dev
+    - zsh
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)",
+        Install Oh My Zsh!,
+      ]
     - command: echo 'if [ -f ~/.bash_custom ]; then . ~/.bash_custom; fi' >> ~/.bashrc
       stdin: false
       stdout: false
       description: Install my customs
       quiet: true
-    # - [echo 'if [ -f ~/.bash_custom ]; then . ~/.bash_custom; fi' >> .bashrc, Install my customs]
+    # https://pip.pypa.io/en/stable/user_guide/#command-completion
+    - [python -m pip completion --bash >> ~/.profile, Tab completition for Pip]
     - [
         curl https://pyenv.run | bash,
         Install pyenv to manage virtual environments,
@@ -54,7 +60,10 @@
         curl -sSL https://install.python-poetry.org | python3 -,
         Install poetry as dependancy manager and packager for Python,
       ]
-    - [poetry completions zsh > ~/.zfunc/_poetry, Tab completition for Poetry]
+    - [
+        poetry completions bash >> ~/.bash_completion,
+        Tab completition for Poetry for bash,
+      ]
     - [
         curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh,
         Install Rust,
@@ -66,4 +75,7 @@
     - whatsdesk
 
 - vscode:
-    - rust-lang.rust-analyzer
+    Lokalise.i18n-ally:
+      status: install
+    rust-lang.rust-analyzer:
+      status: install

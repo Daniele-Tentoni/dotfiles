@@ -11,12 +11,15 @@ My dotfiles.
   - [Snap](#snap)
   - [VsCode](#vs-code)
 - [Keep in mind](#keep-in-mind)
+- [Troubleshooting](#troubleshooting)
 
 I've started following those articles:
 
 1. https://about.gitlab.com/blog/2020/04/17/dotfiles-document-and-automate-your-macbook-setup/
 
 I'm using [DotBot](https://github.com/anishathalye/dotbot) as dotfiles bootstrapper with some useful plugins.
+
+For 2023, one of my objectives is to migrate from Bash to Zsh.
 
 ## How to use
 
@@ -26,9 +29,7 @@ Add the following plugin directories to execute snapd and apt installations: `--
 
 This is the definitive command I use:
 
-```
-$ sudo ./install --plugin-dir ./dotbot-apt/ --plugin-dir ./dotbot-snap/ --plugin-dir ./dotbot-vscode
-```
+    $ sudo ./install --plugin-dir ./dotbot-apt/ --plugin-dir ./dotbot-snap/ --plugin-dir ./dotbot-vscode
 
 ## What it does
 
@@ -54,7 +55,12 @@ Using the [apt plugin](https://github.com/bryant1410/dotbot-apt), dotbot will in
 
 ### Shell
 
-Run custom shell scripts, installing my customs, pyenv and poetry.
+Run custom shell scripts, installing:
+
+- my customs
+- pyenv
+
+After _oh_my_zsh_ installation, Poetry completitions are installed from official OMZ Poetry plugin.
 
 ### Snap
 
@@ -85,3 +91,15 @@ My Python dev setup is inspired by [this article](https://mitelman.engineering/b
 ## Inspiration
 
 Took inspiration from [anishathalye's dotfiles](https://github.com/anishathalye/dotfiles).
+
+## Troubleshooting
+
+### Lost Snap Packages after zsh migration from Bash
+
+After switching from Bash to Zsh, KDE may lose references in PATH var to Wayland and Flatpak to load GUI applications.
+
+Follow [this link](https://hackingathome.medium.com/how-to-restore-ubuntu-apps-installed-from-snap-after-switching-to-zshell-from-bash-c69208625ba0).
+
+But, one moment, I haven't that flatpak file! My tty0 is broken after that fix, so I've removed that emulation. So the fix look like this:
+
+    emulate sh -c ‘source /etc/profile.d/apps-bin-path.sh’
