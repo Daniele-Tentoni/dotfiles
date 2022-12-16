@@ -46,36 +46,21 @@
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)",
         Install Oh My Zsh!,
       ]
-    - command: echo 'if [ -f ~/.bash_custom ]; then . ~/.bash_custom; fi' >> ~/.bashrc
-      stdin: false
-      stdout: false
-      description: Install my customs
-      quiet: true
-    # https://pip.pypa.io/en/stable/user_guide/#command-completion
-    - [python -m pip completion --bash >> ~/.profile, Tab completition for Pip]
+    - command: ./install_scripts/zsh_custom.sh
+      description: Install my custom omz plugins
+      stdout: true
+      stderr: true
     - [
-        curl https://pyenv.run | bash,
-        Install pyenv to manage virtual environments,
+        which pyenv > /dev/null || curl https://pyenv.run | $SHELL,
+        Install Pyenv to manage Python Virtual Environments in the default shell,
       ]
     - [
-        curl -sSL https://install.python-poetry.org | python3 -,
-        Install poetry as dependancy manager and packager for Python,
+        which poetry > /dev/null || curl -sSL https://install.python-poetry.org | python3 -,
+        Install poetry as dependancy manager and packager for Python if not installed,
       ]
     - [
-        poetry completions bash >> ~/.bash_completion,
-        Tab completition for Poetry for bash,
-      ]
-    - [
-        curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh,
+        which rustc > /dev/null || curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh,
         Install Rust,
-      ]
-    - [
-        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions,
-        Install zsh autosuggestion plugin
-      ]
-    - [
-        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting,
-        Install ZSH syntax highlighting
       ]
 
 - snap:

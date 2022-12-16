@@ -27,6 +27,9 @@ plugins=(
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
+# Has to run before compinit
+fpath+=~/.zfunc
+
 autoload -U compinit && compinit -u
 
 source $ZSH/oh-my-zsh.sh
@@ -69,9 +72,6 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 
 # Add poetry bin location
 export PATH="$PATH:$HOME/.local/bin"
-
-# Has to run before compinit
-fpath+=~/.zfunc
 
 # Use env var for Cargo (Rust)
 if [ -f "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env"; fi
