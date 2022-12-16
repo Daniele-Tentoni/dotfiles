@@ -68,6 +68,14 @@
         curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh,
         Install Rust,
       ]
+    - [
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions,
+        Install zsh autosuggestion plugin
+      ]
+    - [
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting,
+        Install ZSH syntax highlighting
+      ]
 
 - snap:
     - dbeaver-ce

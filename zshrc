@@ -21,7 +21,13 @@ plugins=(
     git
     pass
     poetry
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+
+autoload -U compinit && compinit -u
 
 source $ZSH/oh-my-zsh.sh
 
