@@ -25,7 +25,7 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ccc,underline"
 
 # Has to run before compinit
 fpath+=~/.zfunc
