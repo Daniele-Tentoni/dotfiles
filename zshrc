@@ -73,6 +73,11 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 # Add poetry bin location
 export PATH="$PATH:$HOME/.local/bin"
 
+# Add shell support for pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Use env var for Cargo (Rust)
 if [ -f "$HOME/.cargo/env" ]; then . "$HOME/.cargo/env"; fi
 
