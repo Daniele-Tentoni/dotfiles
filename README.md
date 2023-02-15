@@ -45,13 +45,12 @@ Descriptions of not-obsvious elements.
 
 Using the [apt plugin](https://github.com/bryant1410/dotbot-apt), dotbot will install defined apt packages.
 
-**Audacity** for audio editing.
-
-**Pyenv required**: some mandatory packages to build CPython from scratch with Pyenv (to manage environments).
-
-**Pass** and **[pass-git-helper](https://github.com/languitar/pass-git-helper)**: as password manager and credential-store-helper for git.
-
-**snapd** to install snap packages (see below)
+| Package | Use |
+| --- | --- |
+| Audacity | Audio editing |
+| Pyenv | *required* Some mandatory packages to build CPython from scratch with Pyenv (to manage environments) |
+| Pass and [pass-git-helper](https://github.com/languitar/pass-git-helper) | Password manager and credential-store-helper for git |
+| Snapd | Install snap packages (see below) |
 
 ### Shell
 
@@ -66,13 +65,11 @@ After _oh_my_zsh_ installation, Poetry completitions are installed from official
 
 Using the [snap plugin](https://github.com/DrDynamic/dotbot-snap), dotbot will install defined snap packages.
 
-**DBeaver** (the _dbeaver-ce_ package)
-
-**telegram-desktop** to use Telegram on desktop.
-
-**whatsdesk** to use Whatsapp on desktop.
-
-General purpouse database manager.
+| Package | Use |
+| --- | --- |
+| DBeaver | |the _dbeaver-ce_ package |
+| telegram-desktop | Telegram Client for Linux |
+| Whatsdesk | Whatsapp Client for Linux |
 
 ### VS Code
 
