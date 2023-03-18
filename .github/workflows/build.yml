@@ -1,0 +1,19 @@
+# From https://github.com/anishathalye/dotfiles/blob/master/.github/workflows/build.yml
+
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 0 1 * *" # Schedule monthly
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          mkdir -p ~/dotfiles-install-dir
+      - run: |
+          HOME=~/dotfiles-install-dir ./install
