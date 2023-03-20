@@ -16,4 +16,4 @@ jobs:
       - run: |
           mkdir -p ~/dotfiles-install-dir
       - run: |
-          HOME=~/dotfiles-install-dir ./install
+          HOME=~/dotfiles-install-dir ./install --plugin-dir ./dotbot-apt/ --plugin-dir ./dotbot-snap/ --plugin-dir ./dotbot-vscode
