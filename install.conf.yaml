@@ -14,31 +14,6 @@
     ~/.zshrc:
     ~/.zshrc_aliases:
 
-- apt:
-    - audacity
-    - build-essential
-    - curl
-    - libbz2-dev
-    - libncursesw5-dev
-    - libffi-dev
-    - liblzma-dev
-    - libreadline-dev
-    - libsqlite3-dev
-    - libssl-dev
-    - libxmlsec1-dev
-    - libxml2-dev
-    - llvm
-    - make
-    - pass
-    - pass-git-helper
-    - python-is-python3
-    - snapd
-    - tk-dev
-    - wget
-    - xz-utils
-    - zlib1g-dev
-    - zsh
-
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [chsh -s $(which zsh), Make zsh the default shell]
@@ -62,11 +37,6 @@
         which rustc > /dev/null || curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh,
         Install Rust,
       ]
-
-- snap:
-    - dbeaver-ce
-    - telegram-desktop
-    - whatsdesk
 
 - vscode:
     Lokalise.i18n-ally:

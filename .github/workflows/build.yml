@@ -18,4 +18,6 @@ jobs:
       - run: |
           mkdir -p ~/dotfiles-install-dir
       - run: |
-          HOME=~/dotfiles-install-dir ./install --plugin-dir ./dotbot-apt/ --plugin-dir ./dotbot-snap/ --plugin-dir ./dotbot-vscode
+          HOME=~/dotfiles-install-dir sudo ./install -p dotbot-apt/apt.py -p dotbot-snap/snap.py -c packages.config.yaml
+      - run: |
+          HOME=~/dotfiles-install-dir ./install --plugin-dir ./dotbot-vscode
