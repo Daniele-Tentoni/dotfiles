@@ -21,7 +21,7 @@ jobs:
       
       - name: Install elevated permissions dotfiles
         run: |
-          HOME=~/dotfiles-install-dir sudo ./install -p dotbot-apt/apt.py -p dotbot-snap/snap.py -c packages.config.yaml
+          HOME=~/dotfiles-install-dir sudo ./install -p dotbot-apt/apt.py -p dotbot-snap/snap.py -c elevated-permissions.config.yaml
       
       - name: Install default permissions dotfiles
         run: |
