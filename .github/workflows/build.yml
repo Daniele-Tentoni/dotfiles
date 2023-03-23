@@ -15,9 +15,14 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: 'recursive'
+      
       - run: |
           mkdir -p ~/dotfiles-install-dir
-      - run: |
+      
+      - name: Install elevated permissions dotfiles
+        run: |
           HOME=~/dotfiles-install-dir sudo ./install -p dotbot-apt/apt.py -p dotbot-snap/snap.py -c packages.config.yaml
-      - run: |
-          HOME=~/dotfiles-install-dir ./install --plugin-dir ./dotbot-vscode
+      
+      - name: Install default permissions dotfiles
+        run: |
+          HOME=~/dotfiles-install-dir ./install -p dotbot-vscode/vscode.py

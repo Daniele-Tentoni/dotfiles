@@ -1,5 +1,9 @@
 # sudo ./install -p dotbot-apt/apt.py --p dotbot-snap/snap.py -c packages.config.yaml
 
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [chsh -s $(which zsh), Make zsh the default shell]
+
 - apt:
     - audacity
     - build-essential

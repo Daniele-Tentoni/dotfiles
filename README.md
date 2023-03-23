@@ -29,7 +29,9 @@ Add the following plugin directories to execute snapd and apt installations: `--
 
 This is the definitive command I use:
 
-    $ sudo ./install --plugin-dir ./dotbot-apt/ --plugin-dir ./dotbot-snap/ --plugin-dir ./dotbot-vscode
+    $ sudo ./install -p dotbot-apt/apt.py -p dotbot-snap/snap.py -p dotbot-vscode/vscode.py -c packages.config.yaml
+
+Look at the build workflow file for the usage in CI environment.
 
 ## What it does
 

@@ -16,23 +16,30 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [chsh -s $(which zsh), Make zsh the default shell]
-    - [
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)",
-        Install Oh My Zsh!,
-      ]
-    - command: ./install_scripts/zsh_custom.sh
+    
+    -
+      command: >
+        [ -z $ZSH ] && 
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || 
+        echo "oh-my-zsh is already installed"
+      description: Install Oh My Zsh!
+
+    -
+      command: ./install_scripts/zsh_custom.sh
       description: Install my custom omz plugins
       stdout: true
       stderr: true
+    
     - [
-        which pyenv > /dev/null || curl https://pyenv.run | $SHELL,
+        which pyenv > /dev/null && echo "pyenv already installed" || curl https://pyenv.run | $SHELL,
         Install Pyenv to manage Python Virtual Environments in the default shell,
       ]
+    
     - [
         which poetry > /dev/null || curl -sSL https://install.python-poetry.org | python3 -,
         Install poetry as dependancy manager and packager for Python if not installed,
       ]
+    
     - [
         which rustc > /dev/null || curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh,
         Install Rust,

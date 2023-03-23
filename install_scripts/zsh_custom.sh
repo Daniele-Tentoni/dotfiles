@@ -11,7 +11,7 @@ if [ $ZSH_PATH = "zsh not found" ]; then
     >&2 echo "You need zsh installed"
     exit 2 # QUESTION: There's a better error code to return?
 fi
-if [ ! -z $ZSH ]; then
+if [ -z $ZSH ]; then
     >&2 echo "You need oh-my-zsh installed"
     exit 3
 fi
